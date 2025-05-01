@@ -4,7 +4,7 @@ import seaborn as sns
 import matplotlib.pyplot as plt
 
 # Load the Excel file
-file_path = r"/dataset/testdatasetusedcar.xlsx"
+file_path = r"dataset/testdatasetusedcar.xlsx"
 data = pd.read_excel(file_path)
 
 # 2. Boxplot of Price by Brand (Top 10 Brands by Frequency)
