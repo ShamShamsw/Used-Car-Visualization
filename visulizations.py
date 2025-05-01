@@ -68,18 +68,7 @@ plt.title('Clean Title vs Salvage')
 plt.savefig('images/clean_title_vs_salvage.png', dpi=300, bbox_inches='tight')
 plt.show()
 
-# 6. Histogram of Price with Logarithmic Binning
-price_bins = np.geomspace(1, 100000, num=10)  # Logarithmic bins
-plt.figure(figsize=(10, 6))
-plt.hist(data['price'], bins=price_bins, color='skyblue', edgecolor='black', log=True)
-plt.xscale('log')
-plt.title('Histogram of Price (Logarithmic Binning)')
-plt.xlabel('Price (Log Scale)')
-plt.ylabel('Frequency')
-plt.savefig('images/histogram_price_log_binning.png', dpi=300, bbox_inches='tight')
-plt.show()
-
-# 7. Heatmap of Variable Correlations
+# 6. Heatmap of Variable Correlations
 numeric_columns = ['price', 'milage', 'model_year', 'engine']
 correlation_matrix = data[numeric_columns].corr()
 plt.figure(figsize=(8, 6))
