@@ -68,6 +68,15 @@ plt.title('Clean Title vs Salvage')
 plt.savefig('images/clean_title_vs_salvage.png', dpi=300, bbox_inches='tight')
 plt.show()
 
+# 5. Pie Chart: Accidents vs No Accidents
+accident_counts = data['accident'].map({0: 'No Accidents', 1: 'Accidents'}).value_counts()
+labels = ['No Accidents', 'Accidents']
+plt.figure(figsize=(8, 8))
+plt.pie(accident_counts, labels=labels, autopct='%1.1f%%', startangle=140, colors=['lightblue', 'orange'])
+plt.title('Accidents vs No Accidents')
+plt.savefig('images/accidents_vs_no_accidents.png', dpi=300, bbox_inches='tight')
+plt.show()
+
 # 6. Heatmap of Variable Correlations
 numeric_columns = ['price', 'milage', 'model_year', 'engine']
 correlation_matrix = data[numeric_columns].corr()
