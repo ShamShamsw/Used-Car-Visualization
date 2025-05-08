@@ -8,7 +8,7 @@ import numpy as np
 os.makedirs('images', exist_ok=True)
 
 # Load the Excel file
-file_path = r"dataset/testdatasetusedcar.xlsx"
+file_path = r"dataset/testset.xlsx"
 data = pd.read_excel(file_path)
 
 # Data Cleaning
