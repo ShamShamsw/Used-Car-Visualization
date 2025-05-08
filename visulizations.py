@@ -94,3 +94,19 @@ plt.xlabel('Transmission')
 plt.ylabel('Price')
 plt.savefig('images/violin_plot_price_vs_transmission.png', dpi=300, bbox_inches='tight')
 plt.show()
+
+# Bar Chart: Frequency of Price Ranges (Rainbow Colors)
+price_bins = [0, 5000, 10000, 20000, 30000, 40000, 50000, 100000]
+price_labels = ['0-5k', '5k-10k', '10k-20k', '20k-30k', '30k-40k', '40k-50k', '50k-100k']
+data['price_range'] = pd.cut(data['price'], bins=price_bins, labels=price_labels, right=False)
+price_range_counts = data['price_range'].value_counts().sort_index()
+
+plt.figure(figsize=(10, 6))
+colors = sns.color_palette("rainbow", len(price_range_counts))
+price_range_counts.plot(kind='bar', color=colors)
+plt.title('Frequency of Price Ranges')
+plt.xlabel('Price Range')
+plt.ylabel('Frequency')
+plt.xticks(rotation=45)
+plt.savefig('images/frequency_price_ranges.png', dpi=300, bbox_inches='tight')
+plt.show()
